@@ -11,21 +11,17 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include<stdlib.h>
-#include<stddef.h>
-#include<stdio.h>
 
-void	*memmove(void *dest, const void *src, size_t n)
+void    *ft_memmove(void *dest, const void *src, size_t n)
 {
 	const unsigned char *s;
 	unsigned char *d;
 	size_t	i;
 
-	d = (unsigned char *)dest;
-	s = (const unsigned char *)src;
-
-	if(!dest || !src)
-		return(dest);
+    if (!dest && !src)
+        return (NULL);
+    d = (unsigned char *)dest;
+    s = (const unsigned char *)src;
 	if(d < s)
 	{
 		i = 0;
@@ -44,11 +40,4 @@ void	*memmove(void *dest, const void *src, size_t n)
 		}
 	}
 	return (d);
-}
-
-int main()
-{
-	char c[]= "hello";
-	memmove(c+2, c, 3);
-	printf("%s", c);
 }
