@@ -12,12 +12,27 @@
 
 #include "libft.h"
 
-typedef struct s_list
-{
-	void			*content;
-	struct s_list	*next;
-}	t_list;
-
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
+	if(!lst || !new)
+		return ;
+	new->next = *lst;
+	*lst = new;
+}
+
+int main()
+{
+	t_list *lst;
+
+	lst = ft_lstnew("42");
+	ft_lstadd_front(&lst ,ft_lstnew(" world "));
+	ft_lstadd_front(&lst ,ft_lstnew(" hello "));
+
+
+	while(lst != NULL)
+	{
+		printf("%s ->", (char *)lst->content);
+		lst = lst->next;
+	}
+	printf("NULL\n");
 }

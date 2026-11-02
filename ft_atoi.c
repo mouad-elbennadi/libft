@@ -12,6 +12,15 @@
 
 #include "libft.h"
 
+static int check_overflow(long result, int digit, int sign)
+{
+	if (sign == 1 && result > (INT_MAX - digit) / 10)
+		return (1);
+	if (sign == -1 && result > (LONG_MAX - digit) / 10)
+		return (1);
+	return (0);
+}
+
 int	ft_atoi(const char *str)
 {
 	int	i;
@@ -31,8 +40,10 @@ int	ft_atoi(const char *str)
 	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{
+		if (check_overflow(result, str[i] - '0', sign))
+			return (0);
 		result = result * 10 + (str[i] - '0');
 		i++;
 	}
-	return (result * sign);
+	return ((int)(result * sign));
 }
