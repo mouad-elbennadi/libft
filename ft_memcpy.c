@@ -6,7 +6,7 @@
 /*   By: moel-ben <marvin@42.fr>                   #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/10/14 14:21:47 by moel-ben         #+#    #+#              */
-/*   Updated: 2026/10/18 11:08:27 by moel-ben        ###   ########.fr        */
+/*   Updated: 2026/11/04 21:40:06 by moel-ben        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,5 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 		f[i] = g[i];
 		i++;
 	}
-	return(dest);
+	return (dest);
 }
-

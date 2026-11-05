@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
+/*                                                       :::      ::::::::    */
 /*   ft_lstmap.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/28 15:26:23 by marvin            #+#    #+#             */
-/*   Updated: 2026/10/28 15:26:23 by marvin           ###   ########.fr       */
+/*                                                   +:+ +:+         +:+      */
+/*   By: moel-ben <marvin@42.fr>                   #+#  +:+       +#+         */
+/*                                               +#+#+#+#+#+   +#+            */
+/*   Created: 2026/10/28 15:26:23 by moel-ben         #+#    #+#              */
+/*   Updated: 2026/11/04 23:03:07 by moel-ben         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "libft.h"
 
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *),
-		void (*del)(void *))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_list;
 	t_list	*new_node;
