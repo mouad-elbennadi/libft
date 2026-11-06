@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: moel-ben <moel-ben@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/18 11:00:09 by moel-ben          #+#    #+#             */
-/*   Updated: 2026/10/18 13:15:25 by moel-ben         ###   ########.fr       */
+/*                                                       :::      ::::::::    */
+/*   ft_strjoin.c                                      :+:      :+:    :+:    */
+/*                                                   +:+ +:+         +:+      */
+/*   By: moel-ben <marvin@42.fr>                   #+#  +:+       +#+         */
+/*                                               +#+#+#+#+#+   +#+            */
+/*   Created: 2026/10/18 11:00:09 by moel-ben         #+#    #+#              */
+/*   Updated: 2026/11/06 13:12:05 by moel-ben        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,26 +27,19 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		s1_len;
 	int		s2_len;
 	char	*p;
-	int		i;
-	int		j;
 
+	if (!s1 && s2)
+		return (ft_strdup(s2));
+	if (s1 && !s2)
+		return (ft_strdup(s1));
+	if (!s1 && !s2)
+		return (ft_strdup(""));
 	s1_len = ft_len(s1);
 	s2_len = ft_len(s2);
-	p = malloc(sizeof(char) * (s1_len + s2_len + 1));
+	p = malloc(s1_len + s2_len + 1);
 	if (!p)
 		return (NULL);
-	i = 0;
-	j = 0;
-	while (i < s1_len)
-	{
-		p[i] = s1[i];
-		i++;
-	}
-	while (j < s2_len)
-	{
-		p[i + j] = s2[j];
-		j++;
-	}
-	p[s1_len + s2_len] = '\0';
+	ft_strlcpy(p, s1, s1_len + s2_len + 1);
+	ft_strlcat(p, s2, s1_len + s2_len + 1);
 	return (p);
 }

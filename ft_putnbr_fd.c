@@ -6,12 +6,11 @@
 /*   By: moel-ben <marvin@42.fr>                   #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/10/24 23:44:13 by moel-ben         #+#    #+#              */
-/*   Updated: 2026/10/24 23:55:49 by moel-ben        ###   ########.fr        */
+/*   Updated: 2026/11/06 11:58:01 by moel-ben        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>
 
 static void	put_number(long n, int fd)
 {

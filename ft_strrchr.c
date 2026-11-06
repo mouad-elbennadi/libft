@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                       :::      ::::::::    */
-/*   ft_strrchr.c                                      :+:      :+:    :+:    */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                   +:+ +:+         +:+      */
 /*   By: moel-ben <marvin@42.fr>                   #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/10/16 21:32:43 by moel-ben         #+#    #+#              */
-/*   Updated: 2026/10/24 23:23:12 by moel-ben        ###   ########.fr        */
+/*   Updated: 2026/11/05 16:26:15 by moel-ben         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,16 @@ char	*ft_strrchr(const char *s, int c)
 {
 	int	i;
 
+	if (!s)
+		return (NULL);
 	i = 0;
 	while (s[i])
 		i++;
-	while (i > 0)
+	if ((char)c == '\0')
+		return ((char *)&s[i]);
+	while (i >= 0)
 	{
-		if (s[i] == (char) c)
+		if ((unsigned char)s[i] == (unsigned char)c)
 			return ((char *) &s[i]);
 		i--;
 	}

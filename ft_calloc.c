@@ -6,11 +6,10 @@
 /*   By: moel-ben <marvin@42.fr>                   #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/10/17 16:08:23 by moel-ben         #+#    #+#              */
-/*   Updated: 2026/11/04 21:20:48 by moel-ben        ###   ########.fr        */
+/*   Updated: 2026/11/06 11:24:38 by moel-ben        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdint.h>
 #include "libft.h"
 
 void	*ft_calloc(size_t nmemb, size_t size)

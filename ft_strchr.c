@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                       :::      ::::::::    */
-/*   ft_strchr.c                                       :+:      :+:    :+:    */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                   +:+ +:+         +:+      */
 /*   By: moel-ben <marvin@42.fr>                   #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/10/16 21:15:56 by moel-ben         #+#    #+#              */
-/*   Updated: 2026/10/18 11:00:33 by moel-ben        ###   ########.fr        */
+/*   Updated: 2026/11/05 16:14:26 by moel-ben         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s)
+	int	i;
+
+	i = 0;
+	while (s[i])
 	{
-		if (*s == (char) c)
-			return ((char *) s);
-		s++;
+		if ((unsigned char)s[i] == (unsigned char) c)
+			return ((char *)&s[i]);
+		i++;
 	}
+	if ((unsigned char)c == '\0')
+		return ((char *)&s[i]);
 	return (NULL);
 }
